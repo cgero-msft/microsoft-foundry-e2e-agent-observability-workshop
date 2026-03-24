@@ -1,0 +1,8 @@
+# Contoso Travel Agent — Foundry Deployment Configuration
+# Deploy with: azd agent deploy
+kind: hosted
+name: contoso-travel-maf
+model: gpt-4.1-mini
+description: >
+  Contoso Travel concierge agent built with Microsoft Agent Framework.
+  Searches flights, hotels, and car rentals across 5 destination pairs.

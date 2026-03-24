@@ -1,0 +1,9 @@
+# Contoso Travel Agent — Foundry Deployment Configuration
+# Deploy with: azd agent deploy
+kind: hosted
+name: contoso-travel-langgraph
+model: gpt-4.1-mini
+description: >
+  Contoso Travel concierge agent built with LangGraph.
+  Uses a declarative state graph with tool-calling loop for
+  flights, hotels, and car rental search.
