@@ -1,8 +1,12 @@
 # Workshop Guide
 
-This workshop takes you on an end-to-end developer journey — from creating your first AI agent to tracing, evaluating, and red-teaming it before production. You'll build the **Contoso Travel** multi-agent system using one of three implementation approaches, then apply observability and security best practices that work across all of them.
+This workshop gives you two paths to choose from - that will take you on a developer journey to build your intuition for Microsoft Foundry Observability features in the context of a real-world scenario.
 
-**You will need your own Azure subscription** to complete this workshop.
+In **Path 1** you follow the tradition development route, using the Foundry SDK to write code manually. You will build a multi-agent Contoso Travel solution and explore tracing, evaluations and red-teaming capabilities in context.
+
+In **Path 2** you follow the AI-assisted development route, using Foundry Skills with a coding agent to automate and accelerate the workflow. You will explore a more open-ended journey, starting with a recommended prompt then navigating the conversation on your own.
+
+**Pick one path** to complete in venue - and explore the other one at your own pace later. _We recommend trying Path 2 and providing early feedback!_
 
 ---
 
@@ -40,12 +44,12 @@ Complete this first regardless of which path you choose.
 
 ---
 
-### Path A: Prompted Agents · ~75 min
+### Path A: Prompt Agents · ~75 min
 
 | Step | What You Do | Notebook | ~Time |
 |:-----|:------------|:---------|:------|
 | A.1 | Install SDK, validate environment, explore sample data | [Lab 01 — Setup](notebooks/1-prompt-agents/lab-01-setup.ipynb) | 10 min |
-| A.2 | Create your first prompted agent (Contoso Travel concierge) | [Lab 02 — Agent](notebooks/1-prompt-agents/lab-02-agent.ipynb) | 10 min |
+| A.2 | Create your first prompt agent (Contoso Travel concierge) | [Lab 02 — Agent](notebooks/1-prompt-agents/lab-02-agent.ipynb) | 10 min |
 | A.3 | Add function tools for flight, hotel, and car rental search | [Lab 03a — Tools](notebooks/1-prompt-agents/lab-03a-tools.ipynb) | 10 min |
 | A.4 | Orchestrate specialist agents into a multi-agent workflow | [Lab 03b — Workflow](notebooks/1-prompt-agents/lab-03b-workflow.ipynb) | 10 min |
 | A.5 | Instrument with OpenTelemetry tracing (console + Azure Monitor) | [Lab 04 — Tracing](notebooks/1-prompt-agents/lab-04-tracing.ipynb) | 10 min |
@@ -111,7 +115,7 @@ The `microsoft-foundry` skill is organized into sub-skill areas, each with detai
 
 | Sub-Skill Area | Coverage | Workshop Labs |
 |----------------|----------|---------------|
-| **foundry-agent / create** | Create prompted or hosted agents, configure tools (file search, Bing grounding, Azure AI Search, MCP, memory, web search) | Lab 02 |
+| **foundry-agent / create** | Create prompt or hosted agents, configure tools (file search, Bing grounding, Azure AI Search, MCP, memory, web search) | Lab 02 |
 | **foundry-agent / deploy** | Docker build, ACR push, container start, `agent.yaml` configuration | `src/` deploy |
 | **foundry-agent / invoke** | Run agents via SDK, handle streaming responses | Lab 02–03 |
 | **foundry-agent / trace** | Search traces, analyze latency, analyze failures, conversation detail, KQL templates, eval correlation | Lab 04 |

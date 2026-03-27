@@ -4,86 +4,108 @@
 
 Want to build trustworthy agentic solutions? You need end-to-end observability and security that is built-in and not bolted-on. In this workshop, we’ll look at the Foundry Control Plane in Microsoft Foundry and go hands-on with three key features - Evaluations, Tracing and Red Teaming - and build intuition for using the “Operate” tab on the Foundry portal as a command center for monitoring our deployed solutions for insights.
 
-<br/>
 
 ## Application Scenario
 
-This workshop uses a **Contoso Travel** scenario to ground every lab in a realistic use case. Contoso Travel is a mid-size travel agency whose team of human advisors can no longer keep up with the volume of customer inquiries. They need an AI-powered travel assistant — a system of intelligent agents that can search real inventory, make personalized recommendations, and plan multi-leg trips just like their best human advisors.
+We'll use a familiar scenario across all labs, allowing us to think about features and outcomes in the context of a real-world use case. 
 
-We build a **multi-agent system** with four specialist agents:
+**Contoso Travel** is a fictitious mid-size travel agency whose team of human advisors can no longer keep up with the volume of customer inquiries. They need an AI-powered travel assistant — a system of intelligent agents that can search real inventory, make personalized recommendations, and plan multi-leg trips just like their best human advisors.
 
-- 🧑‍💼 **Concierge Agent** — the front desk, greeting customers and understanding their travel needs
-- ✈️ **Flight Agent** — searches Contoso's flight inventory across 5 route pairs (Seattle↔Paris, NYC↔London, SF↔Tokyo, Chicago↔Rome, Denver↔Cancún)
-- 🏨 **Hotel Agent** — finds hotels across 5 destination cities by star rating, price, and amenities
-- 🚗 **Car Rental Agent** — looks up rental vehicles by city, type, and availability
-
-Building the agents is only the beginning. Getting them **production-ready** requires an end-to-end workflow:
-
-- **Create** — define agents with instructions and connect them to real data via function tools
-- **Orchestrate** — compose specialist agents into a multi-agent workflow so they collaborate on complex requests
-- **Trace** — instrument the system with OpenTelemetry so you can see exactly what happens inside every interaction
-- **Evaluate** — systematically measure quality (fluency, coherence, task adherence) and safety at scale with built-in evaluators
-- **Red-Team** — stress-test with adversarial attacks (jailbreaks, encoded prompts, crescendo attacks) to find vulnerabilities before your users do
-
-Each lab walks you through one of these steps, building on the previous one, so you experience the full journey from first agent to production-ready system — and get a sandbox where you can explore new ideas (different attacks, custom evaluators, additional agents) on your own.
-
-<br/>
-
-## Implementation Approaches
-
-This workshop implements the Contoso Travel scenario using **three different approaches**, so you can compare trade-offs and pick the right tool for your use case:
-
-| Approach | Folder | Framework | Best For |
-|----------|--------|-----------|----------|
-| **Prompted Agents** | `1-prompt-agents/` | Azure AI Projects SDK | Simple agents defined via instructions + tools, no custom hosting |
-| **Hosted Agents (MAF)** | `2-hosted-agents-maf/` | Microsoft Agent Framework | Custom Python agents with in-process tools, business logic, ML models |
-| **Hosted Agents (LangGraph)** | `3-hosted-agents-langgraph/` | LangGraph + Foundry Adapter | Declarative graph-based agents with visual control flow and conditional routing |
-
-### What You Learn from Each
-
-- **Prompted Agents** — The fastest path to a working agent. You define instructions and tools via the SDK, and Foundry handles execution. Great for learning the core concepts (tracing, evaluation, red teaming) without infrastructure concerns.
-- **Hosted Agents (MAF)** — Full control over agent logic. Your Python code runs inside the agent process, giving you in-process tool execution, custom business logic, and direct database access. You learn how custom code affects observability.
-- **Hosted Agents (LangGraph)** — Declarative control flow as a graph. Nodes are functions, edges define routing, and the graph structure itself becomes visible in traces. You learn how graph-based architectures provide the richest observability.
-
-**Key insight:** 
-
-Evaluation and red teaming are **agent-agnostic** — they test external behavior through Responses API regardless of implementation. Tracing is where the **approaches differ** most, giving you progressively deeper visibility from prompted → MAF → LangGraph.
-
-<br/>
-
-## Learning Objectives
-
-By completing this workshop, you should be able to get a better sense for the Microsoft Foundry Observability tooling and end-to-end developer workflows. Specifically, you should be able to:
-
-1. Navigate the Microsoft Foundry portal experience to create & manage projects
-1. Create, observe & optimize _prompted agents_ from portal or SDK
-1. Create, observe & optimize _hosted agents_ from VS Code (via CLI, extension or SDK)
-1. Understand tracing features & workflows (for debugging or observing agent execution)
-1. Understand evaluation features & workflows (for assessing quality, safety & agentic performance)
-1. Understand red-teaming features & workflows (for adversarial testing for diverse risks & attacks)
-1. Understand and use core developer tools (AI Toolkit, Azure Dev CLI, Foundry SDK, Foundry portal)
-
-We also encourage the use of this repository as a sandbox to explore "more" labs beyond the in-venue session time limits.
-
-<br/>
+In this workshop, we'll look at how you can build this application with observability in focus, picking one of two potential paths for implementation.
 
 ## Getting Started
 
-This workshop is setup for _self-guided learning using your own Azure subscription_. Visit the [Workshop Guide](./labs/README.md) page to get started, then follow the session outline to complete "core" labs in-venue. The repository also contains "more" labs that you can explore in your own time, later.
+Want to just dive in? Visit the [Lab Setup](./labs/notebooks/0-setup/lab-00-setup-project.md) page to get started. But first, complete scanning the rest of this README to get more context.
+
+## Workshop Outline
+
+The workshop is designed in three sections:
+1. Project Setup - using Foundry Portal
+1. Code-First - using Foundry SDK
+1. Code-First - using Foundry Skills
+
+Complete the first section - then pick one of the two options to proceed further. You can always do the second option at a later time. _We recommend trying option 2, which was just recently released in preview_ - it is in active development (so expect some issues or changes to occur) making it a great opportunity for feedback.
+
+**Read on to learn more about each option**
+
+<br/>
+
+
+### Project Setup - With Foundry Portal
+
+Here's what you'll achieve by completing this lab:
+
+1. Explore the new Foundry UI and onboarding help
+1. Experience the streamlined agent creation workflow
+1. Create a Foundry project with an agent, model & app insights
+
+Then, spend a few minutes using this sample agent to explore the observability features in the Foundry portal before writing a single line of code:
+- Tracing - try a test prompt - observe trace elements in portal
+- Evaluations - explore default metrics - create a new evaluation run
+- Red Teaming - explore risks & attacks - create a red teaming scan
+
+**Then, it's time to move from plan to prototype** and go code-first!
+
+
+### Path 1: Code-First - With Foundry SDK
+
+Think of this as the **traditional development path** for code-first. You'll complete a structured set of notebooks that explore tracing, evaluations and red-teaming and understand the code yourself.
+
+You will walk away with a better intution for what each feature does - and have a sandbox (notebook) you can customize to explore more on each feature. **We will use this to build a multi-agent workflow for Contoso Travel**.
+
+
+### Path 2: Code-First - With Foundry Skills 🆕
+
+Think of this as the **future development path** for code-first. 
+You'll use an early preview version of Foundry Skills and see how this allows you to guide the development without having to understand the specifics of code implementation.
+
+You will walk away with an intuition for what the new _observe_ sub-skill does - and have a sandbox you can revisit to explore further steps in this conversation, on your own. This path is non-deterministic. We may all start with the same prompt, but our next steps will be guided by our own responses to the coding agent.
+
+Visit the [Lab Setup](./labs/notebooks/0-setup/lab-00-setup-project.md) page to get started.
+
+<br/>
+
+## Microsoft Foundry Tools & Experiences
+
+Microsoft Foundry provides different tools and features to streamline developer experiences for both low-code and code-first developers. We have instrumented this repository with a _devcontainer_ that has all dependencies pre-installed so you can use this as a sandbox to explore any of the following later:
+
+- Foundry Portal - low-code UI experience perfect for initial planning
+- Foundry SDK - code-first experience perfect for complex prototyping
+- AI Toolkit Extension - bring low-code UI experiences into VS Code
+- Copilot for Azure Extension - bring "skills" into VS Code for coding agents
+- Azure CLI & Azure Developer CLI - command-line tools to simplify infra setup
+
+In our default paths, we prioritize _starting_ at the Foundry Portal then getting familiar with either the Foundry SDK option (traditional way) or Foundry Skills option (coding agent way) as the next step.
+
+<br/>
+
+## Future Work: Explore Hosted Agents
+
+Keep an eye on the repo for updates over the next few weeks. Our goal is to add additional paths as described below - which can explore Foundry Skills and end-to-end observability workflows for _hosted agent_ implementations for the same Contoso Travel scenario.
+
+
+| Approach | Path | Framework | Best For |
+|----------|--------|-----------|----------|
+| **Prompt Agents** | `1-prompt-agents/` | Azure AI Projects SDK | Simple agents defined via instructions + tools, no custom hosting |
+| **Hosted Agents (MAF)** | `2-hosted-agents-maf/` | Microsoft Agent Framework | Custom Python agents with in-process tools, business logic, ML models |
+| **Hosted Agents (LangGraph)** | `3-hosted-agents-langgraph/` | LangGraph + Foundry Adapter | Declarative graph-based agents with visual control flow and conditional routing |
+
+One takeaway is that evaluation and red-teaming are **agent-agnostic** — they test external behavior through Responses API regardless of how hat agent was implementated. Tracing is where the **approaches differ** most, giving you progressively deeper visibility from prompt → MAF → LangGraph.
+
 
 ## Relevant Resources 
 
-The Microsoft Foundry Control Plane giving you centralized control and oversight over your AI agent fleet - from planning ("Discover") to prototype ("Build") to production ("Operate") stages of your workflow. As shown in the figure, it combines capabilities for _security, compliance, fleet management and observability_ into a unified role-aware management interface accessed through the Microsoft Foundry portal.  In this workshop, we focus mostly on the _Observability_ features (tracing, evaluations, metrics) and explore related aspects like _red teaming_ that contribute to other capabilities like Security and Compliance.
+The figure below provides a great visual representation of the _Foundry Control Plane_ capabilities. It combines capabilities for _security, compliance, fleet management and observability_ into a unified role-aware management interface accessed through the Microsoft Foundry portal.  
 
+In this workshop, we focus mostly on the _Observability_ features (tracing, evaluations, metrics) and explore _red teaming_ in the context of _adversarial testing_ that aligns with both evaluations (how) and security (why) components of Foundry Control Plane. Use the linked resources to learn more about individual features:
 
-
-Explore these resources to learn more:
-
-1. [Foundry Control Plane Overview](https://learn.microsoft.com/en-us/azure/foundry/control-plane/overview?view=foundry) - learn to get enterprise-wide visibility, governance, and control of AI agents, models & tools
-1. [Observability Overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/observability?view=foundry) - learn about the ability to monitor, understand, and troubleshoot, your AI agents
-1. [Agent Tracing Overview](https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept?view=foundry) - learn about OpenTelemetry (OTel) protocols & semantic conventions support in Foundry
-1. [Evaluations Overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/built-in-evaluators?view=foundry) - learn about support for built-in and custom evaluators for quality, safety & agentic performance
-1. [Red Teaming Overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/ai-red-teaming-agent?view=foundry) - learn about support for adversarial testing for targeted risk categories & attack strategies
+| Resource | Description |
+|----------|-------------|
+| [Foundry Control Plane Overview](https://learn.microsoft.com/en-us/azure/foundry/control-plane/overview?view=foundry) | Enterprise-wide visibility, governance, and control of AI agents, models & tools |
+| [Observability Overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/observability?view=foundry) | Monitor, understand, and troubleshoot your AI agents |
+| [Agent Tracing Overview](https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept?view=foundry) | OpenTelemetry (OTel) protocols & semantic conventions support in Foundry |
+| [Evaluations Overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/built-in-evaluators?view=foundry) | Built-in and custom evaluators for quality, safety & agentic performance |
+| [Red Teaming Overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/ai-red-teaming-agent?view=foundry) | Adversarial testing for targeted risk categories & attack strategies |
 
 ![FCP](./labs/assets/foundry-control-plane.png)
 
