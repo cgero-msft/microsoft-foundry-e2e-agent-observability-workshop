@@ -1,0 +1,29 @@
+client_id,client_name,ticker,company,shares,cost_basis,current_price,market_value,sector,account_type
+ZB-CL-001,Margaret Chen,ZVA,Zava Technologies Inc,500,142.50,168.30,84150.00,Technology,IRA
+ZB-CL-001,Margaret Chen,SHG,Sheldon Healthcare Group,300,78.20,82.45,24735.00,Healthcare,IRA
+ZB-CL-001,Margaret Chen,BDF,Bridgeford Utilities Co,800,31.00,33.10,26480.00,Utilities,IRA
+ZB-CL-001,Margaret Chen,NXG,Nexgen Consumer Brands,200,54.75,49.20,9840.00,Consumer Staples,IRA
+ZB-CL-001,Margaret Chen,PKR,Parkridge REIT,400,22.30,24.80,9920.00,Real Estate,IRA
+ZB-CL-002,Jason Rivera,MTK,MonteTech AI Corp,1200,45.60,78.90,94680.00,Technology,Brokerage
+ZB-CL-002,Jason Rivera,QBT,Qubit Semiconductor,800,62.10,91.35,73080.00,Technology,Brokerage
+ZB-CL-002,Jason Rivera,VLR,Volare Space Systems,600,28.40,35.70,21420.00,Industrials,Brokerage
+ZB-CL-002,Jason Rivera,CRX,Corex Biotech,400,115.00,142.60,57040.00,Healthcare,Brokerage
+ZB-CL-002,Jason Rivera,FNX,Fenix Digital Payments,350,88.25,76.40,26740.00,Financials,Roth IRA
+ZB-CL-003,David and Sarah Park,ZVA,Zava Technologies Inc,300,155.00,168.30,50490.00,Technology,Joint Brokerage
+ZB-CL-003,David and Sarah Park,BDF,Bridgeford Utilities Co,600,29.50,33.10,19860.00,Utilities,Joint Brokerage
+ZB-CL-003,David and Sarah Park,GLM,Glenmore Dividend Fund,1000,41.20,43.85,43850.00,Financials,Joint Brokerage
+ZB-CL-003,David and Sarah Park,SHG,Sheldon Healthcare Group,400,80.00,82.45,32980.00,Healthcare,Joint Brokerage
+ZB-CL-003,David and Sarah Park,NXG,Nexgen Consumer Brands,500,51.30,49.20,24600.00,Consumer Staples,Joint Brokerage
+ZB-CL-003,David and Sarah Park,PKR,Parkridge REIT,700,21.80,24.80,17360.00,Real Estate,401k
+ZB-CL-004,Apex Capital Partners,MTK,MonteTech AI Corp,5000,38.90,78.90,394500.00,Technology,Institutional
+ZB-CL-004,Apex Capital Partners,QBT,Qubit Semiconductor,3000,55.00,91.35,274050.00,Technology,Institutional
+ZB-CL-004,Apex Capital Partners,VLR,Volare Space Systems,4000,22.10,35.70,142800.00,Industrials,Institutional
+ZB-CL-004,Apex Capital Partners,CRX,Corex Biotech,2000,98.50,142.60,285200.00,Healthcare,Institutional
+ZB-CL-004,Apex Capital Partners,FNX,Fenix Digital Payments,2500,72.40,76.40,191000.00,Financials,Institutional
+ZB-CL-004,Apex Capital Partners,GLM,Glenmore Dividend Fund,3000,39.75,43.85,131550.00,Financials,Institutional
+ZB-CL-005,Priya Kapoor,ZVA,Zava Technologies Inc,150,160.00,168.30,25245.00,Technology,Brokerage
+ZB-CL-005,Priya Kapoor,GLM,Glenmore Dividend Fund,800,42.50,43.85,35080.00,Financials,Brokerage
+ZB-CL-005,Priya Kapoor,SHG,Sheldon Healthcare Group,250,76.90,82.45,20612.50,Healthcare,Brokerage
+ZB-CL-005,Priya Kapoor,BDF,Bridgeford Utilities Co,500,30.20,33.10,16550.00,Utilities,IRA
+ZB-CL-005,Priya Kapoor,PKR,Parkridge REIT,600,23.10,24.80,14880.00,Real Estate,IRA
+ZB-CL-005,Priya Kapoor,NXG,Nexgen Consumer Brands,300,53.40,49.20,14760.00,Consumer Staples,IRA

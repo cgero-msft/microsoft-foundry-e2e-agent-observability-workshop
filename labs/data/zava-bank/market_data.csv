@@ -1,0 +1,19 @@
+indicator_id,name,category,current_value,change_pct,period,date
+ZB-MK-001,Broad Market Index (BMI 500),Index,5842.30,1.20,1M,2026-03-31
+ZB-MK-002,Tech Composite Index,Index,18340.50,2.80,1M,2026-03-31
+ZB-MK-003,Small Cap Growth Index,Index,2145.70,-0.40,1M,2026-03-31
+ZB-MK-004,Bond Aggregate Index,Index,98.45,0.30,1M,2026-03-31
+ZB-MK-005,Technology Sector,Sector Performance,2.80,2.80,1M,2026-03-31
+ZB-MK-006,Healthcare Sector,Sector Performance,1.50,1.50,1M,2026-03-31
+ZB-MK-007,Financials Sector,Sector Performance,0.90,0.90,1M,2026-03-31
+ZB-MK-008,Utilities Sector,Sector Performance,-0.20,-0.20,1M,2026-03-31
+ZB-MK-009,Consumer Staples Sector,Sector Performance,-1.10,-1.10,1M,2026-03-31
+ZB-MK-010,Industrials Sector,Sector Performance,1.70,1.70,1M,2026-03-31
+ZB-MK-011,Real Estate Sector,Sector Performance,0.40,0.40,1M,2026-03-31
+ZB-MK-012,Federal Funds Rate,Economic Indicator,4.50,0.00,Current,2026-03-31
+ZB-MK-013,Consumer Price Index (CPI),Economic Indicator,3.10,-0.20,YoY,2026-03-31
+ZB-MK-014,Unemployment Rate,Economic Indicator,4.20,0.10,Monthly,2026-03-31
+ZB-MK-015,GDP Growth Rate,Economic Indicator,2.40,0.30,Quarterly,2026-03-31
+ZB-MK-016,10-Year Treasury Yield,Economic Indicator,4.15,-0.05,Current,2026-03-31
+ZB-MK-017,Market Volatility Index,Economic Indicator,18.70,-2.30,Current,2026-03-31
+ZB-MK-018,Consumer Confidence Index,Economic Indicator,104.20,1.80,Monthly,2026-03-31

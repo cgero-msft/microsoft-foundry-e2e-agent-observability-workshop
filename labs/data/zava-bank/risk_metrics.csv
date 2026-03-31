@@ -1,0 +1,6 @@
+client_id,client_name,risk_tolerance,portfolio_beta,sharpe_ratio,max_drawdown_pct,concentration_top3_pct,tech_exposure_pct,healthcare_exposure_pct,financials_exposure_pct,utilities_exposure_pct,consumer_staples_exposure_pct,industrials_exposure_pct,real_estate_exposure_pct,total_value
+ZB-CL-001,Margaret Chen,Conservative,0.72,1.15,8.40,87.20,54.20,15.93,0.00,17.06,6.34,0.00,6.39,155125.00
+ZB-CL-002,Jason Rivera,Aggressive,1.45,1.62,22.30,82.10,61.40,20.87,9.79,0.00,0.00,7.84,0.00,272960.00
+ZB-CL-003,David and Sarah Park,Moderate,0.88,1.28,12.10,72.30,26.70,17.44,23.19,10.51,13.01,0.00,9.18,189140.00
+ZB-CL-004,Apex Capital Partners,Moderate-Aggressive,1.22,1.48,17.50,75.60,47.10,20.09,22.72,0.00,0.00,10.06,0.00,1419100.00
+ZB-CL-005,Priya Kapoor,Moderate-Conservative,0.81,1.21,9.80,76.30,19.80,16.17,27.52,12.99,11.58,0.00,11.67,127127.50
